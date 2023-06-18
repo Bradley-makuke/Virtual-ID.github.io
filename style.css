@@ -59,8 +59,29 @@ img {
     transition: .5s;
 }
 
+.navigation .signup-btn {
+    width: 130px;
+    height: 50px;
+    background: #7f0714;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+
 /*What happens when you hover over the button*/
 .navigation .login-btn:hover {
+    background: #fff;
+    color:#162938;
+}
+
+.navigation .signup-btn:hover {
     background: #fff;
     color:#162938;
 }
