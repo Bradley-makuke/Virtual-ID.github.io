@@ -59,7 +59,7 @@ img {
     transition: .5s;
 }
 
-.navigation .signup-btn {
+.navigation #signup-btn {
     width: 130px;
     height: 50px;
     background: #7f0714;
@@ -81,12 +81,12 @@ img {
     color:#162938;
 }
 
-.navigation .signup-btn:hover {
+.navigation #signup-btn:hover {
     background: #fff;
     color:#162938;
 }
 
-.navigation a::after {
+.navigation a:not(.no-transform)::after {
     content: '';
     position: absolute;
     left: 0;
@@ -100,7 +100,7 @@ img {
     transition: transform .4s;
 } 
 
-.navigation a:hover::after{
+.navigation a:not(.no-transform):hover::after{
     transform-origin: center;
     transform: scaleX(1);
 }
