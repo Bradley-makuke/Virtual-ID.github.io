@@ -3,22 +3,22 @@ margin: 0;
 padding: 0;
 }
 body{
-    position: relative;
-    top: 75px;
     margin: 0;
     background-color: grey;
+   
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-    background: url('background.jpg') no-repeat;
 }
 .sign-up{
-    background-color: darkgrey;
+    background-color: #ffff;
     width: 100%;
     height: 100%;
     max-width: 450px;
-    border: 2px solid grey;
+    border: 2px solid black;
     margin: 20px auto;
     padding: 10px 0;
     border-radius: 30px;
+    background: transparent;
+    box-shadow: 10px;
     
 }
 .header h4{
@@ -28,7 +28,7 @@ body{
 
 }
 .divider{
-    border: 1px solid grey;
+    border: 1px solid white;
     margin: 3px;
     border-radius:1px;
 }

@@ -1,0 +1,173 @@
+<!--This is an app for students who have lost their ID`s and need to access school facilities that require them to have thei physical copy of their ID
+so we offer an option of a virtual ID that they can use to get into school with or scan at the gate with-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webapp for Authentication</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width= device-width, initial-scale = 1.0">
+           <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:ital,wght@1,700&family=Ubuntu:ital,wght@1,300&display=swap');
+            body{
+                margin: 0;
+                padding: 0;
+                background: #7f0714;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family:'Roboto','Ubuntu','Poppins', sans-serif, Helvetica;
+            }
+            #student-id-verification{
+                background-color: aliceblue;
+                margin: 20px;
+                width: 100%;
+                max-width: 500px;
+                padding: 10px;
+                max-height: 600px;
+                 text-align: center;
+                 border-radius: 0 0 5px 5px;
+            }
+            label{
+                font-size: 1.2em;
+            }
+            
+            button{
+                margin: 10px;
+                padding: 7px 26px 5px 26px;
+                font-size: 1.2em;
+                color: #ffff;
+                background-color: #7f0714;
+                border: 2px aliceblue solid;
+            }
+            select{
+                margin-left: 10px;
+                padding-right: 9px;
+                padding-left: 4px;
+            }
+            input{
+                margin: 5px;
+                padding: 8px 30px 6px 8px
+            }
+            /* Chrome, Safari, Edge, Opera*/
+            input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            /*Firefox */
+            input[type = number]{
+                -moz-appearance: textfield;
+            }
+            .popup{
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: blanchedalmond;
+                z-index: 9999;
+            }
+            .popup-content{
+                position: relative;
+                max-width: 600px;
+                max-height: 600px;
+                width: 80%;
+                height: 80%;
+                background-color: aliceblue;
+                border-radius: 20px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .popup-image{
+                width: 90%;
+                height: 90%;
+            }
+           </style>
+    </head>
+    <body>
+        <div id="student-id-verification">
+            <h1>Student Details</h1>
+            <form  id="details-form">
+            <label for="student-id">Student ID: <input type="number" id="student-id" required></label> <br><br>
+            <label for="verification-method">Verification method</label>
+            <select  id="verification-method" required>
+                <option value="">--Select Method--</option>
+                <option value="keywords">Keywords</option>
+                <option value="password">Password</option>
+                <option value="otp-email">OTP via-Email</option>
+                <option value="otp-sms">OTP via-SMS</option>
+            </select><br><br>
+
+            <div id="verification options">
+                <div id="keywords-container" style="display: none;">
+                    <label for="keywords">Enter Keywords: </label>
+                    <input type="text" id="keywords" required><br>
+                </div>
+                <div id="password-container" style="display: none;">
+                    <label for="passwords">Enter Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div id="otp-container" style="display:none;">
+                    <label for="OTP">Enter OTP: </label>
+                    <input type="text"  id="otp" required>
+                </div>
+                <br><br>
+                <button type="submit" onclick="verifyDetails()">Verify</button>
+            </div>
+        </form>
+        </div>
+        <div id="popup" class="popup" style="display: none;"> 
+            <div class="popup-content">
+                <img src="ID-example.jpeg" alt="Your Virtual Student ID Card" class="popup-image">
+            </div>
+            </div>
+            <script>
+                document.getElementById('verification-method').addEventListener('change', function() {
+      var method = this.value;
+
+      document.getElementById('keywords-container').style.display = 'none';
+      document.getElementById('password-container').style.display = 'none';
+      document.getElementById('otp-container').style.display = 'none';
+      if (method === 'keywords') {
+        document.getElementById('keywords-container').style.display = 'block';
+      } else if (method === 'password') {
+        document.getElementById('password-container').style.display = 'block';
+      } else if (method === 'otp-sms' || method === 'otp-email') {
+        document.getElementById('otp-container').style.display = 'block';
+      }
+    });
+    document.getElementById('details-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var studentID = document.getElementById('student-id').value;
+      var verificationMethod = document.getElementById('verification-method').value;
+
+      // Perform verification logic here based on the chosen method
+      var verificationResult = true; // Replace with actual verification logic
+
+      if (verificationResult) {
+           
+         verifyDetails();
+                        
+        
+      } else {
+        alert('Verification failed. Please try again.');
+      }
+    }); 
+        
+    function verifyDetails(){
+          // show image pop up
+          showPopup(); 
+    }
+           function showPopup(){
+           var popup = document.getElementById("popup");
+           popup.style.display ="flex";
+}
+
+            </script>
+    </body>
+</html>
