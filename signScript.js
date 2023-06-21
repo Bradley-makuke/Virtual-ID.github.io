@@ -1,9 +1,9 @@
-const input = document.querySelector("input");
+const input = document.querySelector("input[name='password'");
 const text = document.querySelector(".text");
-const pattern = document.querySelector(".pattern");
-const pattern1 = document.querySelector(".pattern1");
-const pattern2 = document.querySelector(".pattern2");
-const pattern3 = document.querySelector(".pattern3");
+const input2 = document.querySelector("input.confirm");
+const icon = document.querySelector(".icon");
+const matching = document.querySelector(".match");
+const confirmation = document.querySelector(".comfirmation");
 const showPassword = document.querySelector("#show-password");
 const iconText = document.querySelector(".icon-text");
 const textAlert = document.querySelector(".text-alert");
@@ -19,6 +19,16 @@ showPassword.addEventListener( "click", ()=>{
     showPassword.classList.replace("fa-eye", "fa-eye-slash");
  }
 });
+icon.addEventListener( "click", ()=>{
+   if(input2.type === "password"){
+      input2.type = "text";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+   }
+   else{
+      input2.type = "password";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+   }
+  });
    
 // code for password strength 
 let  alphabet = /[a-zA-Z]/, // letter a to a and A to Z
@@ -34,19 +44,19 @@ let  alphabet = /[a-zA-Z]/, // letter a to a and A to Z
         showPassword.style.color = "red";
 
      }
-     if(val.match(alphabet) && val.match(numeric) && val.length === 8){
+     if(val.match(alphabet) && val.match(numeric) && val.length >= 8){
         input.style.borderColor = "#FF6333";
         text.textContent = "Password is medium";
         showPassword.style.color = "#FF6333";
         text.style.color = "#FF6333";
      }
-     if(val.match(alphabet) && val.match(scharacters) && val.length === 8){
+     if(val.match(alphabet) && val.match(scharacters) && val.length >= 8){
         input.style.borderColor = "#FF6333";
         text.textContent = "Password is medium";
         showPassword.style.color = "#FF6333"
         text.style.color = "#FF6333";
      }
-     if(val.match(alphabet) && val.match(numeric) && val.match(scharacters) && val.length === 8){
+     if(val.match(alphabet) && val.match(numeric) && val.match(scharacters) && val.length >= 8){
         input.style.borderColor = "#22C32A";
         text.textContent = "Password is strong";
         showPassword.style.color = "#22C32A"
@@ -60,5 +70,6 @@ let  alphabet = /[a-zA-Z]/, // letter a to a and A to Z
       text.style.color = "#A6A6A6";
 
       }
+
 
  });
