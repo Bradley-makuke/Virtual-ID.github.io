@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>homepage</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+                * {
+                  margin: 0;
+                 padding: 0;
+                   box-sizing: border-box;
+                        font-family: 'Poppins', sans-serif;
+                }
+
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                 min-height: 100vh;
+            }
+            nav{
+                width: 100%;
+                max-height:100px ;
+                padding: 20px 100px;
+                background: #6C6D74;
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            nav ol{
+              margin-left: 60px;
+              display:inline;
+              list-style: none;
+            }
+            ol:nth-child(1){
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <nav id="top">
+            <div class="dropdown menu">
+                <i class="fa-solid fa-bars"></i>
+                <div class="dropdown-content"  style="display: none;">
+                    <a href="#lost">Lost ID</a>
+                    <a href="#misplaced">Misplaced ID</a>
+                    <a href="#lost&found">Missing ID`s</a>
+                    <span id="divider"></span>
+                    <a href="About.html">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+             <img src="Logo.png" alt="School logo">
+
+            <ol>
+                <li><a href="#lost&found">Notice Board</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <div class="dropdown">
+                    <li><i class="fa-regular fa-user"></i></li>
+                    <div class="dropdown-content"  style="display: none;">
+                        <a href="#profile">Your Profile</a><br>
+                        <a href="#message">Message</a><br>
+                        <span id="divider"></span>
+                        <a href="#appearence">Appearance</a><br>
+                        <span id="divider"></span>
+                        <a href="settings">Settings</a><br>
+                        <a href="login.html">Log out</a><br>
+
+                    </div>
+                </div>
+            </ol>
+         
+        </nav>
+        <section>
+            <div id="announcements">
+                <p>We currently dont have announcements but be on the lookout</p>
+            </div>
+            <div id="lost&found">
+                <h1>Looking for your Missing ID ?</h1>
+                <p>Whoever has their ID lost can find the image here</p>
+            </div>
+            <div id="lost">
+                <h2>Lost Your ID?</h2>
+                <form action="/enquiry" method="post">
+                    <label for="lostday">When did you lose it?</label><br><br>
+                    <input type="date" id="datelost" required><br><br>
+                    <button type="submit"><a href="virtualid.html">Submit</a></button>
+                </form>
+            </div>
+            <div id="misplaced">
+                <h2>Misplaced Your ID?</h2>
+                <form action="/enquiry" method="post">
+                    <label for="misplacementday">When did you misplace it?</label><br><br>
+                    <input type="date" id="datelost" required><br><br>
+                    <button type="submit"><a href="virtualid.html">Submit</a></button>
+                </form>
+            </div>
+            
+        </section>
+        <br><br>
+        <footer id="footer">
+            <i class="fa-brands fa-facebook"></i>
+            <br><br>
+            <i class="fa-brands fa-twitter"></i>
+            <br><br>
+            <i class="fa-brands fa-youtube"></i>
+            <br><br>
+            &copy;2023 Bradley and Paul
+        </footer>
+        <script></script>
+    </body>
+</html>
