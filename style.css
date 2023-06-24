@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body {
+    overflow: auto;
+    height: auto;
+    overflow-y: scroll;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*padding-bottom: 50px;*/
+}
+
+header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding: 20px 100px;
+background: #6C6D74;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 99;
+}
+
+img {
+    object-fit: cover;
+    vertical-align: middle;
+    border-style: none;
+    border: 0;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .login-btn {
+    width: 130px;
+    height: 50px;
+    background: #7f0714;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation #signup-btn {
+    width: 130px;
+    height: 50px;
+    background: #7f0714;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+
+/*What happens when you hover over the button*/
+.navigation .login-btn:hover {
+    background: #fff;
+    color:#162938;
+}
+
+.navigation #signup-btn:hover {
+    background: #fff;
+    color:#162938;
+}
+
+.navigation a:not(.no-transform)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #162938;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .4s;
+} 
+
+.navigation a:not(.no-transform):hover::after{
+    transform-origin: center;
+    transform: scaleX(1);
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+    transform: scale(0);
+    transition: transform .5s ease-in, height .2s ease;
+    
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper.active-popup {
+    transform: scale(1)
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #000;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+/*If you manage to put in icons the styling goes here */
+
+.remember-forgot {
+    font-size: .9em;
+    color: #000;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #000;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #000;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline ;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+}
+
+.login-reg {
+    font-size: .9em;
+    color: #000;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-reg p a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-reg p a:hover {
+    text-decoration: underline;
+}
+
+#take-me-home{
+    color: white;
+    text-decoration: none;
+}
+
+/*Footer Styling*/
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #24262b;
+    /*padding: 40px 0;*/
+    height: 50px;
+}
+
+.container{
+    max-width: 1170px;
+    background-color: #6C6D74;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+
