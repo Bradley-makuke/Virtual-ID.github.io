@@ -5,6 +5,13 @@ btnPopup.addEventListener('click', function(event){
     wrapper.classList.add('active-popup');
 });
 
+document.getElementById("contact").addEventListener("click", function() {
+  window.scrollTo(0, document.body.scrollHeight);
+});
 
+/*
+document.getElementById("contact-link").addEventListener("click", function() {
+  window.scrollTo(0, document.body.scrollHeight);
+});
 
-//Gonn Have to add more JS after linking with Brad's Work 
+*/
