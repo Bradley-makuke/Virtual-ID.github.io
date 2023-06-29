@@ -18,7 +18,7 @@ body{
     padding: 10px 0;
     border-radius: 30px;
     background: transparent;
-    box-shadow: 10px;
+    box-shadow: -2px 3px 2px 2px black;
     
 }
 .header h4{
@@ -151,6 +151,18 @@ margin-left: -6em;
     display: block;
 }
 
+input[type="email"], input[type="password"], input[type="name"]{
+    border-bottom: black solid 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+
+}
+input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="name"]::placeholder{
+    color: black;
+    font-size: 1.1em;
+}
 
 
 
