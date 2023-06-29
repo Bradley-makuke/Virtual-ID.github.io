@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <title>Messages</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@1,200&display=swap');
+        /*Box sizing rules*/
+        *,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+        }
+        /*Remove default margin*/
+        body, h1,h2,h3,h4,p,figure,blockquote,dl,dd{
+            margin: 0;
+        }
+        /*Remove list styles on ul,ol,elements with a list role, which suggests default styling will be removed */
+        ul[role='list'],
+        ol[role='list']{
+            list-style: none;
+        }
+        /*Set core root defaults*/
+        html:focus-within{
+            scroll-behavior: smooth;
+        }
+        /* Set core body defaults */
+        body{
+            min-height: 100vh;
+            text-rendering: optimizeSpeed;
+            line-height: 1.5;
+            font-family: 'Ysabeau', sans-serif;
+            background: linear-gradient(180deg, var(--grey) 31px, transparent 1px) 50%, linear-gradient(180deg, var(--grey) 31px, var(--blue) 1px )50%;
+            background-size: 32px 32px;
+            color:var(--dark);
+        }
+        /* An a element that does not have a class gets default styles */
+        a:not([class]){
+           text-decoration-skip-ink: auto;
+        }
+        /*Make images easier to work with*/
+        img, picture{
+            max-width: 100%;
+            display: block;
+        }
+        /*inherit fonts for inputs and buttons*/
+        input, button,textarea, select{
+            font: inherit;
+        }
+        /*Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+        @media(prefers-reduced-motion:reduce){
+            html:focus-within{
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after{
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        /*Global styles*/
+  :root{
+        --blue:#335DFF;
+        --grey:#F5F5F5;
+        --grey-d-1:#EEE;
+        --grey-d-2:#DDD;
+        --grey-d-3:#888;
+        --white:#fff;
+        --dark:#222;
+    }
+</style>
+    </style>
+    <body>
+        <div class="chatbox-wrapper">
+            <div class="chatbox-toggle">
+                <i class='bx bx-message-dots'></i>
+            </div>
+            <div class="chatbox-message-wrapper">
+                <div class="chatbox-message-header">
+                <div class="chatbox-message-profile">
+                    <img src="default.png" alt="user profile">
+                </div>
+                <div>
+                    <h4 class="chatbox-message-name">John Doe</h4>
+                    <p class="chatbox-message-status">online</p>
+                </div>
+                <div class="chatbox-message-dropdown">
+                    <i class="fa-solid fa-ellipsis-vertical chatbox-message-dropdown-toggle"></i>
+                    <ul class="chatbox-message-dropdown-menu">
+                        <li>
+                            <a href="#">Search</a>
+                        </li>
+                        <li><a href="#">Report</a>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        <div class="chatbox-message-header-content">
+            <div class="chatbox-message-item-sent">
+                <span class="chatbox-message-item-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad, veritatis eius, sapiente nostrum modi reprehenderit architecto accusantium, laboriosam totam consectetur qui incidunt omnis molestiae illum harum asperiores obcaecati itaque?
+                </span>
+                <span class="chatbox-message-item-time">13:29</span>
+            </div>
+                <div class="chatbox-message-item-recieved">
+                    <span class="chatbox-message-item-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad, veritatis eius, sapiente nostrum modi reprehenderit architecto accusantium, laboriosam totam consectetur qui incidunt omnis molestiae illum harum asperiores obcaecati itaque?
+                    </span>
+                    <span class="chatbox-message-item-time">13:29</span>
+                </div>
+        </div>
+        <div class="chatbox-message-bottom">
+            <form action="#" class="chatbox-messgae-from">
+                <textarea  rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
+                <button type="submit" class="chatbox-message-submit">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+            </div>
+        </div>
+        <script>
+
+        </script>
+    </body>
+ </html>

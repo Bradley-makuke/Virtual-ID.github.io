@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>homepage</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+                * {
+                  margin: 0;
+                 padding: 0;
+                   box-sizing: border-box;
+                        font-family: 'Poppins', sans-serif;
+                }
+
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                 min-height: 100vh;
+                 background-color: #646464;
+                 position: relative;
+            }
+            nav{
+                width: 100%;
+                max-height:100px ;
+                padding: 20px 100px;
+                background:linear-gradient(to right, rgb(255, 255, 255,1),rgba(0,0,0,0.06)) ;
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                clear: both;
+            }
+            nav ol{
+              margin-left: 23em;
+              display:inline;
+              list-style: none;
+              font-size: 1.2em;
+              display: inline-flex;
+              align-items: center;
+              justify-content: space-evenly;
+              
+            }
+            ol li{
+                 margin-left: 5em;
+                margin-right: 0;
+            }
+          
+           
+            
+           nav img{
+            margin-left: 5em;
+            width:max-content;
+            height: 70px;
+            top: 0%;
+           }
+           nav .fa-bars{
+            margin: auto 0 0 -2em;
+            
+           
+           }
+           .fa-bars,.fa-user{
+            padding: 10px;
+               cursor: pointer;
+               font-size: 2em;
+           }
+           .fa-bars:hover, .fa-user:hover{
+            background-color: #741713;
+            color: white;
+            border-radius: 200px;
+            opacity: 0.8;
+           
+           }
+           
+            #divider{
+             color: #646464;
+             width: 260px;
+             margin: 8px 0 0 0;
+             height: 1px;
+            }
+            .dropdown-menu{
+                position: relative;
+                margin-left: 0;
+                display: block;
+            }
+            .dropdown-menu a{
+                text-decoration: none;
+                color: black;
+                margin: 10px 0 12px 10px;
+            }
+            #dropdown-content{
+                position: absolute;
+                 width:260px;
+                 height: 300px;
+                 font-size: 1.2em;
+               background-color: white;
+               display: none;
+               
+            }
+            .dropdown-menu:hover #dropdown-content{
+                display: block;
+                margin-left: -100px;
+               
+            }
+            .dropdown-menu:hover #dropdown-content a:hover{
+            
+                font-size: 1.1em;
+                color: #741713;
+            }
+            #dropdown-contents{
+                position: absolute;
+                 width:260px;
+                 height: 280px;
+                
+               background-color: white;
+               display: none;
+               margin-left: 0;
+            }
+            .dropdown-menu:hover #dropdown-contents{
+                display: block;
+                margin: 0;
+            }
+            ol a{
+                color: black;
+                text-decoration: none;
+            }
+            ol a:hover{
+                color: #741713;
+                text-decoration: none;
+                font-size: 1.1em;
+            }
+         #dropdown-contents span{
+            margin:-7px 5px;
+         }
+         #lost{
+             background-color: white;
+             width: 330px;
+             height: 200px;
+             text-align: center;
+            padding-top: 9px;
+            border: 1px #646464 solid;
+            display: none;
+            z-index: 1000;
+            transform: translate(-600px, -60%);
+            top: 50%;
+            left: -50%;
+         }
+         #lost.active{
+            display: block;
+            background-color: black;
+            color: #eaeaea;
+            border: 1px white solid;
+         }
+         #lost.active input{
+            background-color: #646464;
+            color: #eaeaea;
+         }
+         #lost button{
+            margin-top: 5px;
+            padding: 9px 18px 9px 15px;
+            background-color: #741713;
+            
+         }
+         #lost button:hover{
+            margin-top: 5px;
+            padding: 9px 18px 9px 15px;
+            background-color: white;
+            border: #741713 1px solid;
+         }
+         #lost button a{
+            color: black;
+            text-decoration: none;
+            font-size: 1.1em;
+         }
+         #lost button a:hover{
+            color: #741713;
+            text-decoration: none;
+            font-size: 1.1em;
+         }
+         #misplaced{
+             background-color: white;
+             width: 330px;
+             height: 200px;
+             text-align: center;
+            padding-top: 9px;
+            border: 1px #646464 solid;
+            display: none;
+            z-index: 1000;
+            transform: translate(-600px, -60%);
+         }
+         #misplaced.active{
+            display: block;
+            border: 1px #f9f9f9 solid;
+            background-color: black;
+            color: white;
+         }
+         #misplaced.active input{
+            background-color: #646464;
+            color: white;
+         }
+         #misplaced button{
+            margin-top: 5px;
+            padding: 9px 18px 9px 15px;
+            background-color: #741713;
+            
+         }
+         #misplaced button:hover{
+            margin-top: 5px;
+            padding: 9px 18px 9px 15px;
+            background-color: white;
+            border: #741713 1px solid;
+         }
+         #misplaced button a{
+            color: black;
+            text-decoration: none;
+            font-size: 1.1em;
+         }
+         #misplaced button a:hover{
+            color: #741713;
+            text-decoration: none;
+            font-size: 1.1em;
+         }
+         #footer{
+            color: #646464;
+            background-color: black;
+            -webkit-transition: .5s ease-in-out;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            min-width: 967px;
+            height: 150px;
+         }
+         #footer i:hover{
+            color: #741713;
+            font-size: 1.2em;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+         }
+          .background_1, .background_2, .background_3{
+            position: relative;
+            opacity: 0.8;
+            background-color: #646464;
+          }
+          .background_1.active, .background_2.active, .background_3.active{
+            position: relative;
+            opacity: 0.8;
+            background-color: black;
+          }
+          .background_1{
+            min-height:150px;
+          }
+          .background_2{
+            min-height: 100px;
+          }
+          .background_3{
+            min-height: 200px;
+          }
+        .btndiv{
+            position:absolute;
+            top:50;
+            width: 100%;
+            text-align: center;
+            color: black;
+        }
+        .btndiv.active{
+            color: #ffff;
+        }
+        .btn{
+            text-decoration: none;
+            text-transform: uppercase;
+            border:2px solid white;
+            color: #ffffff;
+            padding: 16px;
+            font-size: 20px;
+            letter-spacing: 5px;
+            clear: both;
+        }
+        .btn.active{
+            border: 2px solid black;
+            color: #222;
+        }
+        .btn:hover{
+          background-color: #741713;
+          transition: 5ms;
+          opacity: 0.3;
+        }
+        #announcements{
+           color:#646464;
+           background-color: #ffffff;
+           text-align: center;
+           text-align: justify;
+           padding: 60px 50px;
+           margin: 30px 20px;
+           width:100%
+        }
+        #announcements.active{
+            color: #646464;
+            background-color: black;
+        }
+        #notice{
+            margin: 30px 20px;
+            width: 100%;
+            color: #646464;
+            background-color: #741713;
+            text-align: center;
+            text-align: justify;
+            padding: 60px 50px;
+            clear:both;
+        }
+        #toggle{
+            right: -60%;
+            transform: translateY(50%);
+            top:-12px;
+            transform:translateX(50%);
+            position: relative;
+            display: block;
+            background-color: #646464;
+            width: 29px;
+            height: 20px;
+            border-radius: 20px;
+            cursor:pointer;
+            transition: 0.5s;
+            box-shadow: inset 0 8px 60px rgba(0,0,0,0.0.1),
+                        inset 0 8px 8px rgba(0,0,0,0.0.1),
+                        inset 0 -4px 4px rgba(0,0,0,0.0.1);
+        }
+        #toggle .indicator{
+          position: absolute;
+          top: 2px;
+          left:0;
+          width:16px;
+          height:16px;
+          background: linear-gradient(to bottom, #444, #222);
+          border-radius: 50%;
+          transform:scale(0.9);
+          box-shadow: 0 8px 40px rgba(0,0,0,0.0.5),
+                    inset  0 4px 4px rgba(255,255,255,0.2),
+                    inset  0 -4px 4px rgba(255,255,255,0.2);
+                    transition: 0.5s;
+        }
+        #toggle.active .indicator{
+            left:13px;
+            background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1),
+                    inset  0 4px 4px rgba(255,255,255,1),
+                    inset  0 -4px 4px rgba(255,255,255,1);
+        
+        }
+        body.active{
+            background:black ;
+        }
+        #toggle.active{
+            background: #fff;
+            box-shadow: inset 0 2px 60px rgba(0,0,0,0.0.1),
+                        inset 0 2px 8px rgba(0,0,0,0.0.1),
+                        inset 0 -4px 8px rgba(0,0,0,0.0.5);
+        }
+        #toggle:hover {
+            background-color: #741713;
+            color: #741713;
+        }
+       #top.active{
+        background-color: black;
+        color: #f8f8f8;
+       }
+       #top.active a{
+        color: #f8f8f8;
+       }
+       #top.active .fa-bars{
+        color: #444;
+       }
+       .dropdown-menu.active, #dropdown-content.active, #dropdown-contents.active {
+        background-color: #222;
+
+       }
+       section.active{
+        background-color: black;
+        color: #eaeaea;
+       }
+       .blur{
+        position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      display: none;
+       }
+        </style>
+    </head>
+    <body>
+        <nav id="top">
+            <div class="dropdown-menu">
+                <i class="fa-solid fa-bars"></i>
+                <div id="dropdown-content" >
+                    <br>
+                    <a href="#lost" id="lose">Lost ID</a><br><br>
+                    <a href="#misplaced" id="miss">Misplaced ID</a><br><br>
+                    <hr id="divider">
+                    <a href="#notice">Post Missing ID`s</a><br>
+                    <hr id="divider"><br>
+                    <a href="About.html">About</a><br><br>
+                    <a href="#contact">Contact</a><br>
+                </div>
+            </div>
+             <img src="Logo.png" alt="School logo">
+
+            <ol>
+                <li><a href="#notice">Notice Board</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <div class="dropdown-menu">
+                    <li><i class="fa-regular fa-user"></i></li>
+                    <div id="dropdown-contents">
+                        <br>
+                        <a href="#profile">Your Profile</a><br><br>
+                        <a href="#message">Message</a><br><br>
+                        <hr id="divider"></hr>
+                        <a href="#" id="appearance"> <span><i class="fa-solid fa-moon"></i><span>Appearance</span></span> <span id="toggle"> <i class="indicator"></i></span></a>
+                        <hr id="divider"></hr><br>
+                        <a href="settings">Settings <span><i class="fa-solid fa-gear"></i></span></a><br><br>
+                        <a href="login.html">Log out</a><br><br>
+
+                    </div>
+                </div>
+            </ol>
+         
+        </nav>
+        
+        <section>
+            <div class="background_1">
+                <div class="btndiv"></div>
+            </div>
+            <div class="backgound_2">
+            <div class="btndiv">
+                <a href="#announcements" class="btn">Announcements</a>
+            </div>
+        </div>
+            <div id="announcements">
+                <p>We currently dont have announcements but be on the lookout</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas consectetur quod aliquam nulla pariatur eaque ratione magnam sapiente voluptatibus porro. Consequuntur quia excepturi molestiae quo? Aperiam harum laboriosam cumque minima.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, rerum? Magnam tempore autem ad, facilis reprehenderit enim? A recusandae voluptate similique illum debitis, alias officiis autem nesciunt officia sapiente! Saepe!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque fugit voluptatum delectus quia quos provident illum possimus adipisci asperiores quas perspiciatis velit enim soluta, fuga assumenda alias, vero officiis libero?</p>
+            </div>
+            
+            <div class="btndiv">
+                <a href="#notice" class="btn">Notice Board</a>
+        
+        </div>
+            <div id="notice">
+                <h1 >Looking for your Missing ID ?</h1>
+                <p>Whoever has their ID lost can find the image here</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sed, nihil iste inventore ipsam maiores, quos excepturi tenetur quae placeat ex doloremque vero voluptatibus! At exercitationem fugit aspernatur fugiat ex?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repellat exercitationem aliquam nam ipsa quaerat atque, sunt corporis ipsam dolores ab quas molestias placeat pariatur ea rerum. Numquam, doloribus architecto!</p>
+            </div>
+            <div class="background_3"></div>
+            <div class="blur"></div>
+            
+        </section>
+        <br><br>
+        <div id="footer">
+            <i class="fa-brands fa-facebook"></i>
+            <br><br>
+            <i class="fa-brands fa-twitter"></i>
+            <br><br>
+            <i class="fa-brands fa-youtube"></i>
+            <br><br>
+            &copy;2023 Bradley and Paul
+        </div>
+        <div id="lost" class="lost">
+            <h2>Lost Your ID?</h2>
+            <hr id="mid" style="margin-bottom: 4px;">
+            <form action="/enquiry" method="post">
+                <label for="lostday">When did you lose it?</label><br><br>
+                <input type="date" id="datelost" required><br><br>
+                <button type="submit"><a href="virtualid.html">Submit</a></button>
+            </form>
+        </div>
+        
+        <div id="misplaced" class="misplaced">
+            <h2>Misplaced Your ID?</h2>
+            <hr id="mid" style="margin-bottom: 4px;">
+            <form action="/enquiry" method="post">
+                <label for="misplacementday">When did you misplace it?</label><br><br>
+                <input type="date" id="datelost" required><br><br>
+                <button type="submit"><a href="virtualid.html">Submit</a></button>
+            </form>
+        </div>
+        <script>
+            const body = document.querySelector("body");
+              const toggle = document.getElementById("toggle");
+              const nav = document.querySelector("#top");
+              const menu = document.querySelector(".dropdown-menu");
+              const content = document.querySelector("#dropdown-content");
+              const contents = document.querySelector("#dropdown-contents");
+              const section = document.querySelector("section");
+              const back1 = document.querySelector(".background_1");
+              const back2 = document.querySelector(".background_2");
+              const back3 = document.querySelector(".background_3");
+              const btndiv = document.querySelector(".btndiv");
+              const btn = document.querySelector(".btn");
+              const announcement = document.querySelector("#announcements");
+
+              toggle.onclick = function(){
+                   toggle.classList.toggle('active');
+                   body.classList.toggle('active');
+                   nav.classList.toggle('active');
+                   menu.classList.toggle('active');
+                   content.classList.toggle('active');
+                   contents.classList.toggle('active');
+                   section.classList.toggle('active');
+                   back1.classList.toggle('active');
+                   back2.classList.toggle('active');
+                   back3.classList.toggle('active');
+                   btndiv.classList.toggle('active');
+                   btn.classList.toggle('active');
+                   announcement.classList.toggle('active');
+              }
+
+              // code to display the input form for lost id`s 
+              const lose = document.querySelector("#lose");
+              const lost = document.querySelector("#lost");
+              const blur = document.querySelector(".blur");
+              lose.onclick = ()=>{
+                lost.classList.toggle('active');
+                blur.style.display = "block";
+              }
+
+               // code to display the input form for misplaced id`s 
+               const misplaced= document.querySelector("#misplaced");
+              const miss = document.querySelector("#miss");
+              const blurr = document.querySelector(".blur");
+              miss.onclick = ()=>{
+                misplaced.classList.toggle('active');
+                blurr.style.display = "block";
+              }
+              </script>
+    </body>
+</html>

@@ -5,12 +5,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html,body {
-    overflow: auto;
-    height: auto;
-    overflow-y: scroll;
-}
-
 body {
     display: flex;
     justify-content: center;
@@ -19,7 +13,6 @@ body {
     background: url('background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    /*padding-bottom: 50px;*/
 }
 
 header {
@@ -127,7 +120,6 @@ img {
     top: 50px;
     transform: scale(0);
     transition: transform .5s ease-in, height .2s ease;
-    
 }
 
 .wrapper .form-box {
@@ -244,12 +236,8 @@ img {
 
 /*Footer Styling*/
 .footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background-color: #24262b;
-    /*padding: 40px 0;*/
-    height: 50px;
+    padding: 70px 0;
 }
 
 .container{
@@ -290,25 +278,3 @@ ul{
     box-sizing: border-box;
     width: 50px;
 }
-
-.footer-col ul li:not(:last-child){
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 300;
-    color: #bbbbbb;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover{
-    color: #ffffff;
-    padding-left: 8px;
-}
-
-
