@@ -157,6 +157,7 @@ input[type="email"], input[type="password"], input[type="name"]{
     border-left: none;
     border-right: none;
     background: none;
+    outline:none;
 
 }
 input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="name"]::placeholder{
